@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
+import dollar from '../../images/dollar-sign 1.svg'
+import book from '../../images/Frame.svg'
 
-const Card = ({card}) => {
+const Card = ({card, handleAddToBookmark}) => {
     const {title,picture,description,price,credit} = card
     return (
     
@@ -10,11 +12,11 @@ const Card = ({card}) => {
                 <h2 className="card-title mt-4 text-xl font-bold">{title}</h2>
                 <p className='mt-4 font-[#737272]'>{description}</p>
                 <div className='flex justify-between mt-4'>
-                    <p><img src="" alt="" /> Price: {price}</p>
-                    <p><img src="" alt="" /> Credit: {credit}hr</p>
+                    <p className='inline-flex'><img src={dollar} className="mr-2" alt="" /> Price: {price}</p>
+                    <p className='inline-flex'><img src={book}  className="mr-2" alt="" /> Credit: {credit}hr</p>
                 </div>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary w-full mt-4 mb-4 bg-[#2F80ED] text-white py-2 rounded-lg hover:bg-green-200 hover:text-black">Select</button>
+                    <button onClick={() => handleAddToBookmark(card) } className="btn btn-primary w-full mt-4 mb-4 bg-[#2F80ED] text-white py-2 rounded-lg hover:bg-green-200 hover:text-black">Select</button>
                 </div>
             </div>
         </div>
@@ -23,7 +25,8 @@ const Card = ({card}) => {
 };
 
 Card.propTypes = {
-    card: PropTypes.object.isRequired
+    card: PropTypes.object.isRequired,
+    handleAddToBookmark: PropTypes.func
 }
 
 export default Card;
