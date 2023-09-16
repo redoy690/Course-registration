@@ -14,7 +14,7 @@ const Cards = ({handleAddToBookmark}) => {
     },[])
 
     return (
-        <div className=" md: w-3/4 grid sm: grid-cols-1 md:grid-cols-3 gap-6">
+        <div className=" md:w-3/4 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:gap-1 order-1 ">
             {
                 cards.map(card => <Card key={card.id} card={card} handleAddToBookmark={handleAddToBookmark} ></Card>)
             }

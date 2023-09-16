@@ -6,7 +6,7 @@ const Card = ({card, handleAddToBookmark}) => {
     const {title,picture,description,price,credit} = card
     return (
     
-        <div className="card bg-base-100 shadow-xl p-4 rounded-lg">
+        <div className="card bg-base-100 shadow-xl p-4 rounded-xl mx-2 mt-4 border-zinc-200 border-2">
             <figure  ><img src={picture} className="w-[100%]" alt={`cover picture of the title ${title}`}/></figure>
             <div className="card-body">
                 <h2 className="card-title mt-4 text-xl font-bold">{title}</h2>
