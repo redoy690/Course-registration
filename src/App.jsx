@@ -24,7 +24,7 @@ function App() {
         bookmarks.forEach(item=>{
           const creditParse = parseFloat(item.credit)
           count=count+creditParse
-          console.log(totalCredit)
+          
         })
 
         if(count > 20 ){
